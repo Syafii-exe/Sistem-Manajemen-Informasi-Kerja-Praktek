@@ -57,7 +57,7 @@
                                   <a class="nav-link" href="<?php echo site_url('dosen/galeri');?>">Dokumentasi</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="<?php echo site_url('dosen/contact');?>">Login</a>
+                                <a class="nav-link" href="<?php echo site_url('dosen/contact');?>">Logout</a>
                               </li>
                         </ul>
                   </div>
