@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'home';
 $route['administrator']='admin/login';
-$route['dosenview']='dosen/welcome';
+$route['dosenview']='dosen/contact';
 $route['artikel']='blog';
 $route['artikel']='blog/index';
 $route['artikel/(:any)']='blog/detail/$1';
