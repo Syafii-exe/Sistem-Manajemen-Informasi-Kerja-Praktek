@@ -230,8 +230,12 @@
                   <td><?php echo $pengguna_nohp;?></td>
                   <?php if($pengguna_level=='1'):?>
                         <td>Administrator</td>
+
+                  <?php elseif(($pengguna_level=='2')):?>
+                        <td>Dosen</td>
+
                   <?php else:?>
-                        <td>Author</td>
+                        <td>Mahasiswa</td>
                   <?php endif;?>
                   <td style="text-align:right;">
                         <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $pengguna_id;?>"><span class="fa fa-pencil"></span></a>
@@ -256,9 +260,8 @@
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 1.0
     </div>
-    <strong>Copyright &copy; 2017 <a href="http://mfikri.com">M Fikri Setiadi</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2019 <a href="http://itera.ac.id">Teknik Sipil ITERA</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->
@@ -522,7 +525,8 @@
                                         <div class="col-sm-7">
                                             <select class="form-control" name="xlevel" required>
                                                 <option value="1">Administrator</option>
-                                                <option value="2">Author</option>
+                                                <option value="2">Dosen</option>
+                                                <option value="3">Mahasiswa</option>
                                             </select>
                                         </div>
                                     </div>
@@ -634,10 +638,18 @@
                                             <select class="form-control" name="xlevel" required>
 											<?php if($pengguna_level=='1'):?>
                                                 <option value="1" selected>Administrator</option>
-                                                <option value="2">Author</option>
-											<?php else:?>
-												<option value="1">Administrator</option>
-                                                <option value="2" selected>Author</option>
+                                                <option value="2">Dosen</option>
+                                                <option value="3">Mahasiswa</option>
+
+											<?php elseif($pengguna_level=='2'):?>
+                                                <option value="1">Administrator</option>
+                                                <option value="2" selected>Dosen</option>
+                                                <option value="3">Mahasiswa</option>
+
+                      <?php else:?>
+                                                <option value="1">Administrator</option>
+                                                <option value="2">Dosen</option>
+                                                <option value="3" selected>Mahasiswa</option>
 											<?php endif;?>
                                             </select>
                                         </div>
