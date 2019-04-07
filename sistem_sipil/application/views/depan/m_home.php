@@ -46,19 +46,16 @@
                                     <a class="nav-link" href="<?php echo site_url('');?>">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('daftar');?>">Mahasiswa</a>
+                                    <a class="nav-link" href="<?php echo site_url('daftar');?>">Daftar</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('pengumuman');?>">Pengumuman</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('agenda');?>">Agenda</a>
-                                </li>
-                                <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('download');?>">Download</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('Dokumentasi');?>">Dokumentasi</a>
+                                    <a class="nav-link" href="<?php echo site_url('Dokumentasi');?>">Pengumpulan</a>
                                 </li>
                              </ul>
                         </div>
@@ -93,48 +90,92 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-            <p><strong>A.&nbsp;Definisi Umum</strong>
-                <br />Matakuliah ini bertujuan memberikan kesempatan kepada para mahasiswa untuk memperoleh pengalaman praktik kerja di sebuah instansi teknologi maupun non-teknologi (dalam bidang/divisi/departemen IT) dan mengalami langsung suasana kerja dengan menerapkan ilmu yang telah diperoleh selama masa perkuliahan.</p>
-            <p><strong>B.&nbsp;Prasyarat</strong>
-                <br />Mahasiswa yang mengajukan pendaftaran pelaksanaan kerja praktik harus memenuhi persyaratan utama sebagai berikut :<br />•&nbsp;Mahasiswa Program Studi Teknik Informatika ITERA pada Semester 5 (telah mengambil 70 sks);<br />•&nbsp;Akan mengambil mata-kuliah Kerja Praktik dalam KRS pada Semester 6.</p>
-            <p><strong>C.&nbsp;Pembimbing KP</strong>
-                 <br />Pembimbing KP mahasiswa ditentukan&nbsp; oleh Koordinator KP melalui diskusi dengan Para Dosen Teknik Informatika. Mahasiswa yang melaksanakan KP dipersilahkan memberi masukan kepada Koordinator KP apabila memiliki pilihan Pembimbing KP-nya sendiri.</p>
-            <p><strong>D.&nbsp;Waktu dan Tempat Pelaksanaan KP</strong>
-                <br />Waktu pelaksanaan KP disarankan pada jeda libur semester genap ke semester ganjil. Pelaksanaan KP diluar dari jadwal yang disarankan kemungkinan akan mengalami permasalahan dalam presensi kuliah&nbsp; jika beriringan dengan jadwal kuliah. Pelaksanaan KP memiliki durasi sekurang-kurangnya 25 hari kerja tatap muka dan dibuktikan dengan pengesahan Form KP-2 oleh pimpinan yang berwenang di instansi kerja. Kerja Praktik dilaksanakan di tempat dimana mahasiswa merasakan pengalaman bekerja dan situasi lingkungan kerja nyata. Oleh karena itu KP tidak diperkenankan dilaksanakan dalam lingkungan kerja jarak jauh (remote access). KP juga mengusung aspek integritas dan profesionalisme sehingga instansi tempat pelaksanaan KP harus layak untuk menjadi tempat bekerja bagi mahasiswa sesuai dengan bidang dan keahlian yang dimiliki. Koordinator dan Dosen Pembimbing KP berhak menolak pengajuan KP apabila dirasa tidak sesuai dalam aspek waktu dan tempat pelaksanaan.</p>
-            <p><strong>E.&nbsp;Pendaftaran KP</strong>
-                <br />Pendaftaran KP dapat dilakukan sepanjang Semester 5 berlangsung dengan mengisi Form KP-1 lalu mencetaknya (disarankan tidak menggunakan tulisan tangan) dan diserahkan kepada Bagian Administrasi program studi.</p>
-            <p><strong>F.&nbsp;Proses Pelaksanaan KP</strong>
-                <br />Dalam proses pelaksanaan KP, mahasiswa harus mengikuti beberapa pedoman sebagai berikut :<br />
-                •&nbsp;Menaati segala peraturan dan ketentuan yang ada pada instansi kerja;<br />
-                •&nbsp;Menjaga etika dan wibawa sebagai pekerja;<br />
-                •&nbsp;Bersikap profesional dan menunjukkan etos kerja yang baik;<br />
-                •&nbsp;Tidak melakukan perbuatan curang maupun melanggar hukum yang berlaku;<br />
-                •&nbsp;Mendokumentasikan kegiatan harian baik di dalam kantor maupun ketika berada di lapangan. Dokumentasi berbentuk catatan harian yang bersifat logsheet pada Form KP-2, juga dokumentasi visual berupa foto dan video;<br />
-                •&nbsp;Menjaga nama baik Institut Teknologi Sumatera dalam hal perbuatan dan tutur kata.</p>
-            <p><strong>G. Kewajiban Setelah Pelaksanaan KP</strong>
-                <br />1. Mahasiswa diwajibkan membuat laporan KP dan menyerahkan draft pertama kepada Pembimbing KP segera setelah pelaksanaan KP berakhir.</p>
-                <p>2. Mahasiswa diwajibkan mendaftar Seminar KP selambat-lambatnya 30 hari setelah pelaksanaan KP berakhir dengan melampirkan :
-                    <br />• Laporan KP final yang sudah disetujui oleh Pembimbing KP;
-                    <br />• Form Presensi dan Logsheet KP-2 yang sudah ditandatangani oleh atasan di instansi kerja yang dibubuhi cap;
-                    <br />• Foto kopi KRS semester 6 yang tercantum mata kuliah Kerja Praktik.</p>
-                <p>3. Mahasiswa diwajibkan mengirim dokumentasi KP kepada Koordinator KP. Dokumentasi ini meliputi :<br />
-                    •<span style="display: inline !important; float: none; background-color: transparent; color: #32373c; font-family: Noto Serif,serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; line-height: 28.8px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px;"> </span>Catatan Logsheet (Form KP-2) yang berisi aktivitas harian yang dilakukan;
-                    <br />• Beberapa foto / video kegiatan
-                    <br />• Minimal 1 buah foto bersama dengan atasan/pegawai/karyawan yang ada di instansi KP. (Disarankan untuk berfoto di lokasi landmark perusahaan)
-                    <br />Berkas diatas dikirim melalui email : informatika@itera.ac.id dengan subjek  KERJAPRAKTIK_NIM. Diperbolehkan mengunggah berkas di atas menggunakan cloud drive dan mengirimkan tautan dari drive penyimpanan melalui email.</p>
-                <p>4. Mahasiswa yang melanggar batas waktu penyelesaian Laporan dan pendaftaran Seminar akan dikenakan sanksi berupa penurunan nilai sebanyak 1 grade setiap bulan (maksimal penurunan nilai sampai C).</p>
-                <p>5. Mahasiswa wajib menyerahkan Laporan KP yang telah dijilid <em>hardcover</em> paling lambat 1 minggu setelah pelaksanaan Seminar KP. Keterlambatan pengumpulan akan dikenakan sanksi penurunan nilai 1 grade setiap minggu (tidak ada batas penurunan nilai).</p>
+               <h2>Welcome</h2>
+               <p>Kami Menyambut baik terbitnya Website MSCHOOL yang baru , dengan harapan dipublikasinya website ini sekolah berharap : Peningkatan layanan pendidikan kepada siswa, orangtua, dan masyarakat pada umumnya semakin meningkat. </p>
 
-                <p>
-                    <a href="http://if.itera.ac.id/wp-content/uploads/2019/02/Form-Pendaftaran-KP.docx">Download Form Pendaftaran Kerja Praktik</a><br />
-                    <a href="http://if.itera.ac.id/wp-content/uploads/2018/10/Form-Presensi-dan-Log-Sheet-KP-IF.docx">Download Form Presensi dan Log Sheet Kerja Praktik</a><br />
-                    <a href="http://if.itera.ac.id/wp-content/uploads/2019/01/Form-Penilaian-Instansi-KP.docx">Download Form Penilaian Instansi KP</a><br />
-                    <a href="http://if.itera.ac.id/wp-content/uploads/2019/01/Form-Pendaftaran-Seminar-KP-IF.docx">Download Form Pendaftaran Seminar Kerja Praktik</a><br />
-                    <a href="http://if.itera.ac.id/wp-content/uploads/2018/12/Template-Laporan-KP.pdf">Download Template Laporan KP</a></p>
+            </div>
+            <div class="col-md-4">
+                <img src="<?php echo base_url().'theme/images/welcome.png'?>" class="img-fluid about-img" alt="#">
             </div>
         </div>
     </div>
 </section>
+<!--//END ABOUT -->
+<!--============================= OUR COURSES =============================-->
+<section class="our_courses">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Artikel Terbaru</h2>
+            </div>
+        </div>
+        <div class="row">
+          <?php foreach ($berita->result() as $row) :?>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="courses_box mb-4">
+                    <div class="course-img-wrap">
+                        <img src="<?php echo base_url().'assets/images/'.$row->tulisan_gambar;?>" class="img-fluid" alt="courses-img">
+                    </div>
+                    <!-- // end .course-img-wrap -->
+                    <a href="<?php echo site_url('artikel/'.$row->tulisan_slug);?>" class="course-box-content">
+                        <h3 style="text-align:center;"><?php echo $row->tulisan_judul;?></h3>
+                    </a>
+                </div>
+            </div>
+          <?php endforeach;?>
+        </div> <br>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a href="<?php echo site_url('artikel');?>" class="btn btn-default btn-courses">View More</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//END OUR COURSES -->
+<!--============================= EVENTS =============================-->
+<!--//END EVENTS -->
+<!--============================= DETAILED CHART =============================-->
+<div class="detailed_chart">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3 chart_bottom">
+                <div class="chart-img">
+                    <img src="<?php echo base_url().'theme/images/chart-icon_1.png'?>" class="img-fluid" alt="chart_icon">
+                </div>
+                <div class="chart-text">
+                    <p><span class="counter"><?php echo $tot_guru;?></span> Guru
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 chart_bottom chart_top">
+                <div class="chart-img">
+                    <img src="<?php echo base_url().'theme/images/chart-icon_2.png'?>" class="img-fluid" alt="chart_icon">
+                </div>
+                <div class="chart-text">
+                    <p><span class="counter"><?php echo $tot_siswa;?></span> Siswa
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 chart_top">
+                <div class="chart-img">
+                    <img src="<?php echo base_url().'theme/images/chart-icon_3.png'?>" class="img-fluid" alt="chart_icon">
+                </div>
+                <div class="chart-text">
+                    <p><span class="counter"><?php echo $tot_files;?></span> Download
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="chart-img">
+                    <img src="<?php echo base_url().'theme/images/chart-icon_4.png'?>" class="img-fluid" alt="chart_icon">
+                </div>
+                <div class="chart-text">
+                    <p><span class="counter"><?php echo $tot_agenda;?></span> Agenda</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!--//END DETAILED CHART -->
 <!--============================= FOOTER =============================-->
 <footer>
