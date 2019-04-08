@@ -1,3 +1,5 @@
-https://s.id/4iwUZ //velocity and Burndown sprint1
+//velocity and Burndown
+https://s.id/4iwUZ
 
-https://s.id/4iwLt //GanttChart
+//GanttChart
+https://s.id/4jmXs
