@@ -66,6 +66,20 @@
             </div>
 
             <div class="form-row">
+                <label for="inputUserName" class="name">Tempat Lahir</label>
+                    <div class="input--style-6">
+                        <input type="text" name="xtmp_lahir" class="form-control" id="inputUserName" placeholder="Tempat Lahir" required>
+                    </div>
+            </div>
+
+            <div class="form-row">
+                <label for="inputUserName" class="name">Tanggal Lahir</label>
+                    <div class="input--style-6">
+                        <input type="text" name="xtgl_lahir" class="form-control" id="inputUserName" placeholder="Contoh: 25 September 1993" required>
+                    </div>
+            </div>
+
+            <div class="form-row">
                 <label for="inputUserName" class="name">Kontak Person</label>
                     <div class="input--style-6">
                         <input type="text" name="xkontak" class="form-control" id="inputUserName" placeholder="Kontak" required>
@@ -95,6 +109,7 @@
             </div>
             <div class="card-footer">
                     <button class="btn btn--radius-2 btn--blue-2" type="submit">Send Application</button>
+                    <button class="btn btn--radius-2 btn--blue-2" type="button">Back Home</button>
             </div>
         </form> 
 </div>

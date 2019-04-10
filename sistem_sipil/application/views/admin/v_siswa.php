@@ -190,10 +190,6 @@
         <div class="col-xs-12">
           <div class="box">
 
-          <div class="box">
-            <div class="box-header">
-              <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Add Siswa</a>
-            </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-striped" style="font-size:13px;">
@@ -203,7 +199,10 @@
           					<th>NIS</th>
           					<th>Nama</th>
           					<th>Jenis Kelamin</th>
-                    <th>Kelas</th>
+                    <th>tempat tangal lahir</th>
+                    <th>tanggal lahir</th>
+                    <th>alamat</th>
+                    <th>kontak</th>
                     <th style="text-align:right;">Aksi</th>
                 </tr>
                 </thead>
@@ -216,8 +215,10 @@
           					   $nis=$i['siswa_nis'];
           					   $nama=$i['siswa_nama'];
           					   $jenkel=$i['siswa_jenkel'];
-          					   $kelas_id=$i['siswa_kelas_id'];
-                       $kelas_nama=$i['kelas_nama'];
+                       $tmp_lahir=$i['siswa_tmp_lahir'];
+                       $tgl_lahir=$i['siswa_tgl_lahir'];
+                       $alamat=$i['siswa_alamat'];
+                       $kontak=$i['siswa_kontak'];
                        $photo=$i['siswa_photo'];
 
                     ?>
@@ -234,7 +235,11 @@
                   <?php else:?>
                   <td>Perempuan</td>
                   <?php endif;?>
-                  <td><?php echo $kelas_nama;?></td>
+                  <td><?php echo $tmp_lahir;?></td>
+                  <td><?php echo $tgl_lahir;?></td>
+                  <td><?php echo $alamat;?></td>
+                  <td><?php echo $kontak;?></td>
+
                   <td style="text-align:right;">
                         <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $id;?>"><span class="fa fa-pencil"></span></a>
                         <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $id;?>"><span class="fa fa-trash"></span></a>
@@ -458,87 +463,16 @@
 </div>
 <!-- ./wrapper -->
 
-    <!--Modal Add Pengguna-->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Add Siswa</h4>
-                    </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/siswa/simpan_siswa'?>" method="post" enctype="multipart/form-data">
-                    <div class="modal-body">
-
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">NIS</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" name="xnis" class="form-control" id="inputUserName" placeholder="NIS" required>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Nama</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" name="xnama" class="form-control" id="inputUserName" placeholder="Nama" required>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Jenis Kelamin</label>
-                                        <div class="col-sm-7">
-                                           <div class="radio radio-info radio-inline">
-                                                <input type="radio" id="inlineRadio1" value="L" name="xjenkel" checked>
-                                                <label for="inlineRadio1"> Laki-Laki </label>
-                                            </div>
-                                            <div class="radio radio-info radio-inline">
-                                                <input type="radio" id="inlineRadio1" value="P" name="xjenkel">
-                                                <label for="inlineRadio2"> Perempuan </label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Kelas</label>
-                                        <div class="col-sm-7">
-                                          <select name="xkelas" class="form-control" required>
-                                            <option value="">-Pilih-</option>
-                                            <?php
-                                                foreach ($kelas->result_array() as $k) {
-                                                  $id_kelas=$k['kelas_id'];
-                                                  $nm_kelas=$k['kelas_nama'];
-
-                                            ?>
-                                            <option value="<?php echo $id_kelas;?>"><?php echo $nm_kelas;?></option>
-                                            <?php } ?>
-                                          </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Photo</label>
-                                        <div class="col-sm-7">
-                                            <input type="file" name="filefoto"/>
-                                        </div>
-                                    </div>
-
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary btn-flat" id="simpan">Simpan</button>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
   <!--Modal Edit Album-->
   <?php foreach ($data->result_array() as $i) :
               $id=$i['siswa_id'];
               $nis=$i['siswa_nis'];
               $nama=$i['siswa_nama'];
               $jenkel=$i['siswa_jenkel'];
-              $kelas_id=$i['siswa_kelas_id'];
+              $tmp_lahir=$i['siswa_tmp_lahir'];
+              $tgl_lahir=$i['siswa_tgl_lahir'];
+              $alamat=$i['siswa_alamat'];
+              $kontak=$i['siswa_kontak'];
               $photo=$i['siswa_photo'];
             ?>
 
@@ -593,26 +527,32 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Kelas</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Tempat Lahir</label>
                                         <div class="col-sm-7">
-                                          <select name="xkelas" class="form-control" required>
-                                            <option value="">-Pilih-</option>
-                                            <?php
-                                                foreach ($kelas->result_array() as $k) {
-                                                  $id_kelas=$k['kelas_id'];
-                                                  $nm_kelas=$k['kelas_nama'];
-
-                                            ?>
-                                            <?php if($id_kelas==$kelas_id):?>
-                                              <option value="<?php echo $id_kelas;?>" selected><?php echo $nm_kelas;?></option>
-                                            <?php else:?>
-                                              <option value="<?php echo $id_kelas;?>"><?php echo $nm_kelas;?></option>
-                                            <?php endif;?>
-                                            <?php } ?>
-                                          </select>
+                                            <input type="text" name="xtmp_lahir" value="<?php echo $tmp_lahir;?>" class="form-control" id="inputUserName" placeholder="Tempat Lahir" required>
                                         </div>
                                     </div>
 
+                                    <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">Tanggal Lahir</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" name="xtgl_lahir" value="<?php echo $tgl_lahir;?>" class="form-control" id="inputUserName" placeholder="Contoh: 25 September 1993" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">alamat</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" name="xalamat" value="<?php echo $alamat;?>" class="form-control" id="inputUserName" placeholder="alamat" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">kontak</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" name="xkontak" value="<?php echo $kontak;?>" class="form-control" id="inputUserName" placeholder="kontak" required>
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Photo</label>
                                         <div class="col-sm-7">
@@ -637,7 +577,10 @@
               $nis=$i['siswa_nis'];
               $nama=$i['siswa_nama'];
               $jenkel=$i['siswa_jenkel'];
-              $kelas_id=$i['siswa_kelas_id'];
+              $tmp_lahir=$i['siswa_tmp_lahir'];
+              $tgl_lahir=$i['siswa_tgl_lahir'];
+              $alamat=$i['siswa_alamat'];
+              $kontak=$i['siswa_kontak'];
               $photo=$i['siswa_photo'];
             ?>
 	<!--Modal Hapus Pengguna-->
