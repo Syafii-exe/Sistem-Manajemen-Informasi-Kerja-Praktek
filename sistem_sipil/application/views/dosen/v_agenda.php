@@ -48,13 +48,13 @@
                                   <a class="nav-link" href="<?php echo site_url('dosen/agenda');?>">Agenda</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('dosen/download');?>">Download/Upload</a>
+                                  <a class="nav-link" href="<?php echo site_url('dosen/download');?>">Download Laporan</a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link" href="<?php echo site_url('dosen/galeri');?>">Dokumentasi</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="<?php echo site_url('dosen/contact');?>">Logout</a>
+                                <a class="nav-link" href="<?php echo site_url('administrator');?>">Logout</a>
                               </li>
                         </ul>
                   </div>
@@ -147,7 +147,7 @@
                               <li><a href="<?php echo site_url('siswa');?>">Mahasiswa </a></li>
                               <li><a href="<?php echo site_url('pengumuman');?>">Pengumuman</a></li>
                               <li><a href="<?php echo site_url('agenda');?>">Agenda</a></li>
-                              <li><a href="<?php echo site_url('download');?>">Download/Upload</a></li>
+                              <li><a href="<?php echo site_url('download');?>">Download Laporan</a></li>
                           </ul>
                       </div>
                     </div>
