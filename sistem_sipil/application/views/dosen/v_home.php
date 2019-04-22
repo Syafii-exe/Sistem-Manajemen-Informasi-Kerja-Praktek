@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/slick.css'?>">
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/slick-theme.css'?>">
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/owl.carousel.min.css'?>">
+    <link href="styletexthome.css" rel="stylesheet" type="text/css">
     <!-- Main CSS -->
     <link href="<?php echo base_url().'theme/css/style.css'?>" rel="stylesheet">
     <?php
@@ -45,7 +46,7 @@
                         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                             <ul class="navbar-nav">
                             <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('');?>">Home</a>
+                                  <a class="nav-link" href="<?php echo site_url('dosen/welcome');?>">Home</a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link" href="<?php echo site_url('dosen/siswa');?>">Mahasiswa</a>
@@ -58,13 +59,13 @@
                                   <a class="nav-link" href="<?php echo site_url('dosen/agenda');?>">Agenda</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('dosen/download');?>">Download/Upload</a>
+                                  <a class="nav-link" href="<?php echo site_url('dosen/download');?>">Download Laporan</a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link" href="<?php echo site_url('dosen/galeri');?>">Dokumentasi</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="<?php echo site_url('dosen/contact');?>">Login</a>
+                                  <a class="nav-link" href="<?php echo site_url('administrator');?>">logout</a>
                               </li>
                              </ul>
                         </div>
@@ -85,13 +86,8 @@
                 <div class="carousel-item active">
                     <img class="d-block" src="<?php echo base_url().'assets/baru/slider3.jpg'?>" alt="First slide">
                     <div class="carousel-caption d-md-block">
+                            <h1><strong><br><br><br><br>Sistem Kerja Praktik Teknik Sipil ITERA</strong></h1>
                         <div class="slider_title">
-                            <h1>Visi</h1>
-                            <h4>Menjadi Program studi yang unggul
-                                dan mandiri dalma penyelenggaraan
-                                pendidikan, penelitian, dan pengabdian kepada masyrakat
-                                dibidang Teknik Sipil serta menjawab 
-                                kebutuhan bangsa dan negara akan sarjana bidang Rekayasa Sipil diwilayah Pulau Sumatera dan sekitarnya
                         </div>
                     </div>
                 </div>
@@ -99,10 +95,7 @@
                     <img class="d-block" src="<?php echo base_url().'assets/baru/slider_1.jpg'?>" alt="Second slide">
                     <div class="carousel-caption d-md-block">
                         <div class="slider_title">
-                            <h1>Misi</h1>
-                            <h4>    1. Menyelenggarakan Pendidikan sarjana dibidang Teknik Sipil melalui proses pembelajaran yang berkualitas tinggi dan efisien.<br>
-                                    2. Menyelenggaran kegiatan penelitian dan pengembangan dibidang Teknik Sipil yang bermanfaat bagi perkembangan ilmu pengetahuan dan peningkatan kesejahteraan masyarakat diwilayah Pulau Sumatera khususnya.<br>
-                                    3. Menyelenggarakan kegiatan pengabdian kepada masyarakat dibidang Teknik Sipil melalui kerja sama dengan institusi lain, baik dengan instansi pemerintah maupun swasta yang dapat memberikan kontribusi bagi tumbuhnya wirausaha berbasis ilmu pengetahuan sains dan teknologi untuk mengembangkan sumber daya ekonomi wilayah dan kesejahteraan.
+                            <h1><strong><br><br><br><br>Sistem Kerja Praktik Teknik Sipil ITERA</strong></h1>
                             <div class="slider-btn">
                             </div>
                         </div>
@@ -112,10 +105,8 @@
                     <img class="d-block" src="<?php echo base_url().'assets/baru/slider_2.jpg'?>" alt="Third slide">
                     <div class="carousel-caption d-md-block">
                         <div class="slider_title">
-                            <h1>Sistem Informasi Teknik Sipil</h1>
-                            <h4>Teknik Sipil itu sendiri merupakan suatu keilmuan yang mencakup teknologi merancang, membangun, memelihara, dan mengelola fasilitas sarana dan prasarana sipil seperti rumah tinggal, gedung bertingkat, jaringan jalan, jembatan, saluran drainase, bandara, pelabuhan, dan lain sebagainya.</h4>
-                            <div class="slider-btn">
-                               
+                        <h1><strong><br><br><br><br>Sistem Kerja Praktik Teknik Sipil ITERA</strong></h1>   
+                            <div class="slider-btn">   
                             </div>
                         </div>
                     </div>
@@ -162,7 +153,7 @@
                               <li><a href="<?php echo site_url('siswa');?>">Mahasiswa </a></li>
                               <li><a href="<?php echo site_url('pengumuman');?>">Pengumuman</a></li>
                               <li><a href="<?php echo site_url('agenda');?>">Agenda</a></li>
-                              <li><a href="<?php echo site_url('download');?>">Download/Upload</a></li>
+                              <li><a href="<?php echo site_url('download');?>">Download</a></li>
                           </ul>
                       </div>
                     </div>
