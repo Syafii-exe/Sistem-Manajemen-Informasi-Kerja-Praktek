@@ -54,9 +54,6 @@
                                   <a class="nav-link" href="<?php echo site_url('dosen/download');?>">Download Laporan</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('dosen/galeri');?>">Dokumentasi</a>
-                              </li>
-                              <li class="nav-item">
                                 <a class="nav-link" href="<?php echo site_url('administrator');?>">Logout</a>
                               </li>
                         </ul>
@@ -130,8 +127,7 @@
                         <div class="sitemap">
                             <h3>Menu Utama</h3>
                             <ul>
-                                <li><a href="<?php echo site_url();?>">Home</a></li>
-                            <li><a href="<?php echo site_url('galeri');?>">Dokumentasi</a></li>
+								<li><a href="<?php echo site_url();?>">Home</a></li>
                             
                             </ul>
                         </div>
