@@ -89,57 +89,22 @@
                         <div class="content">
                         <div class="module">
                             <div class="module-head">
-                                <h3>Pendaftaran</h3>
+                                <h3>Upload File</h3>
                             </div>
                             <?php
-                                if ($status_daftar_kp == 0) {
+                                if ($status == 0) {
                             ?>
                             <div class="module-body">
-                                    <form class="form-horizontal row-fluid" action="<?php echo base_url().'mahasiswa/daftar/simpan'?>" method="post" enctype="multipart/form-data">
-                                        <div class="control-group">
-                                            <label class="control-label" for="basicinput">Nama Mahasiswa 1</label>
-                                            <div class="controls">
-                                                <input type="text" name="nama1" value="<?php echo $c['siswa_nama'];?>" id="basicinput" placeholder="Nama" class="span8" required>
-                                            </div>
-                                        </div>
 
+                                    <form class="form-horizontal row-fluid" action="<?php echo base_url().'mahasiswa/Laporan/simpan'?>" method="post" enctype="multipart/form-data">
+                                        
                                         <div class="control-group">
-                                            <label class="control-label" for="basicinput">Nama Mahasiswa 2</label>
+                                            <label for="basicinput" class="control-label">Upload File</label>
                                             <div class="controls">
-                                                <input type="text" name="nama2"id="basicinput" placeholder="Nama" class="span8" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="control-group">
-                                            <label class="control-label" for="basicinput">NIM Mahasiswa 1</label>
-                                            <div class="controls">
-                                                <input type="text" name="nim1" id="basicinput" value="<?php echo $c['siswa_nis'];?>" placeholder="NIM" class="span8" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="control-group">
-                                            <label class="control-label" for="basicinput">NIM Mahasiswa 2</label>
-                                            <div class="controls">
-                                                <input type="text" name="nim2" id="basicinput" placeholder="NIM" class="span8" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="control-group">
-                                            <label for="basicinput" class="control-label">Transkip Nilai 1</label>
-                                            <div class="controls">
-                                            <input type="file" name="transkip1" required>
+                                            <input type="file" name="filedata" required>
                                             NB: file harus bertype pdf|zip. ukuran maksimal 8 MB.
                                             </div>
                                         </div>
-
-                                        <div class="control-group">
-                                            <label for="basicinput" class="control-label">Transkip Nilai 2</label>
-                                            <div class="controls">
-                                            <input type="file" name="transkip2" required>
-                                            NB: file harus bertype pdf|zip. ukuran maksimal 8 MB.
-                                            </div>
-                                        </div>
-
 
                                         <div class="control-group">
                                             <div class="controls">
@@ -148,13 +113,18 @@
                                         </div>
                                     </form>
                                 </div>
-                                <?php } ?>
+                            <?php } ?>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+            <div class="footer">
+                <div class="container">
+                <b class="copyright">&copy; 2014 Edmin - EGrappler.com </b>All rights reserved.
+                </div>
+            </div>
         <script src="<?php echo base_url().'asset/mahasiswa/scripts/jquery-1.9.1.min.js'?>" type="text/javascript"></script>
         <script src="<?php echo base_url().'asset/mahasiswa/scripts/jquery-ui-1.10.1.custom.min.js'?>" type="text/javascript"></script>
         <script src="<?php echo base_url().'asset/mahasiswa/bootstrap/js/bootstrap.min.js'?>" type="text/javascript"></script>
@@ -162,6 +132,6 @@
         <script src="<?php echo base_url().'asset/mahasiswa/scripts/flot/jquery.flot.resize.js'?>" type="text/javascript"></script>
         <script src="<?php echo base_url().'asset/mahasiswa/scripts/datatables/jquery.dataTables.js'?>" type="text/javascript"></script>
         <script src="<?php echo base_url().'asset/mahasiswa/scripts/common.js'?>" type="text/javascript"></script>
-    
+      
     </body>
 </html>
