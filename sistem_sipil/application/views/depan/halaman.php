@@ -10,13 +10,16 @@
         <link type="text/css" href="<?php echo base_url().'asset/mahasiswa/images/icons/css/font-awesome.css' ?>" rel="stylesheet">
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
             rel='stylesheet'>
+        <link rel="icon" type="image/png" href="<?php echo base_url() ?>.'assets/images/favicon.png'?>">
     </head>
-<body>
-    <div class="navbar navbar-fixed-top">
+
+    <body>
+        <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                        <i class="icon-reorder shaded"></i></a><a class="brand" href="<?php echo site_url('Mahasiswa/halaman');?>">Pendaftaran Kerja Praktek Teknik Sipil</a>
+                        <i class="icon-reorder shaded"></i></a>
+                        <a class="brand" href="<?php echo site_url('Mahasiswa/halaman');?>">Pendaftaran Kerja Praktek</a>
                         <?php
                         $id_admin=$this->session->userdata('ses_id');
                         $q=$this->db->query("SELECT * FROM tbl_siswa WHERE siswa_id='$id_admin'");
@@ -87,74 +90,110 @@
                     </div>
                         <div class="span9">
                         <div class="content">
-                        <div class="module">
+                            <div class="module">
                             <div class="module-head">
-                                <h3>Pendaftaran</h3>
+                                <h3>Data Mahasiswa</h3>
                             </div>
-                            <?php
-                                if ($status_daftar_kp == 0) {
-                            ?>
                             <div class="module-body">
-                                    <form class="form-horizontal row-fluid" action="<?php echo base_url().'mahasiswa/daftar/simpan'?>" method="post" enctype="multipart/form-data">
-                                        <div class="control-group">
-                                            <label class="control-label" for="basicinput">Nama Mahasiswa 1</label>
-                                            <div class="controls">
-                                                <input type="text" name="nama1" value="<?php echo $c['siswa_nama'];?>" id="basicinput" placeholder="Nama" class="span8" required>
-                                            </div>
-                                        </div>
+                                <table class="table table-bordered">
+                                  <thead>
+                                    <tr>
+                                      <th>#</th>
+                                      <th></th>
+                                      <th>Status</th>
+                                      <th>Keterangan</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>   
+                                        
+                                      <td>1</td>
+                                      <td>Pendaftaran Kerja Praktek</td>
+                                        <?php if($daftar ['Status_daftar']=='1'){?>
+                                                <td>sudah divalidasi</td>
+                                        <?php } else{?>
+                                            <td>Belum divalidasi</td>
+                                        <?php } ?>
 
-                                        <div class="control-group">
-                                            <label class="control-label" for="basicinput">Nama Mahasiswa 2</label>
-                                            <div class="controls">
-                                                <input type="text" name="nama2"id="basicinput" placeholder="Nama" class="span8" required>
-                                            </div>
-                                        </div>
+                                        <?php if($daftar ['Status_daftar']=='1'){?>
+                                                <td>sudah divalidasi</td>
 
-                                        <div class="control-group">
-                                            <label class="control-label" for="basicinput">NIM Mahasiswa 1</label>
-                                            <div class="controls">
-                                                <input type="text" name="nim1" id="basicinput" value="<?php echo $c['siswa_nis'];?>" placeholder="NIM" class="span8" required>
-                                            </div>
-                                        </div>
+                                            <?php }elseif($daftar['Status_daftar']=='0') {
+                                            ?>
+                                                <td>Belum divalidasi</td>
+                                            <?php } else{?>
+                                            <td>Belum mengisi data</td>
+                                            <?php } ?>   
+                                    </tr>
+                                    <tr>
+                                      <td>2</td>
+                                      <td>Pengisian Data Proyek</td>
+                                        <?php if($proyek['Status_proyek']=='1'){?>
+                                                <td>sudah divalidasi</td>
+                                            <?php } else{?>
+                                            <td>Belum divalidasi</td>  
+                                        <?php } ?>
+                                      
+                                        <?php if($proyek['Status_proyek']=='1'){?>
+                                                <td>sudah divalidasi</td>
 
-                                        <div class="control-group">
-                                            <label class="control-label" for="basicinput">NIM Mahasiswa 2</label>
-                                            <div class="controls">
-                                                <input type="text" name="nim2" id="basicinput" placeholder="NIM" class="span8" required>
-                                            </div>
-                                        </div>
+                                            <?php }elseif($proyek['Status_proyek']=='0') {
+                                            ?>
+                                                <td>Belum divalidasi</td>
+                                            <?php } else{?>
+                                            <td>Belum mengisi data</td>   
+                                        <?php } ?>
 
-                                        <div class="control-group">
-                                            <label for="basicinput" class="control-label">Transkip Nilai 1</label>
-                                            <div class="controls">
-                                            <input type="file" name="transkip1" required>
-                                            NB: file harus bertype pdf|zip. ukuran maksimal 8 MB.
-                                            </div>
-                                        </div>
+                                    </tr>
+                                    <tr>
+                                      <td>3</td>
+                                      <td>Upload Surat</td>
+                                      <?php if($file['status_surat']=='1'){?>
+                                                <td>sudah divalidasi</td>
+                                            <?php } else{?>
+                                            <td>Belum divalidasi</td>  
+                                        <?php } ?>
+                                      
+                                        <?php if($file['status_surat']=='1'){?>
+                                                <td>sudah divalidasi</td>
 
-                                        <div class="control-group">
-                                            <label for="basicinput" class="control-label">Transkip Nilai 2</label>
-                                            <div class="controls">
-                                            <input type="file" name="transkip2" required>
-                                            NB: file harus bertype pdf|zip. ukuran maksimal 8 MB.
-                                            </div>
-                                        </div>
+                                            <?php }elseif($file['status_surat']=='0') {
+                                            ?>
+                                                <td>Belum divalidasi</td>
+                                            <?php } else{?>
+                                            <td>Belum mengisi data</td>   
+                                        <?php } ?>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Upload Berkas Laporan Kp</td>
+                                        <?php if($laporan['Status_laporan']=='1'){?>
+                                                <td>sudah divalidasi</td>
+                                            <?php } else{?>
+                                            <td>Belum divalidasi</td>  
+                                        <?php } ?>
+                                      
+                                        <?php if($laporan['Status_laporan']=='1'){?>
+                                                <td>sudah divalidasi</td>
 
-
-                                        <div class="control-group">
-                                            <div class="controls">
-                                                <button type="submit" class="btn btn-primary">Kirim Pendaftaran </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <?php } ?>
+                                            <?php }elseif($laporan['Status_laporan']=='0') {
+                                            ?>
+                                                <td>Belum divalidasi</td>
+                                            <?php } else{?>
+                                            <td>Belum mengisi data</td>   
+                                        <?php } ?>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                            </div>
+                        </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        
+             
         <script src="<?php echo base_url().'asset/mahasiswa/scripts/jquery-1.9.1.min.js'?>" type="text/javascript"></script>
         <script src="<?php echo base_url().'asset/mahasiswa/scripts/jquery-ui-1.10.1.custom.min.js'?>" type="text/javascript"></script>
         <script src="<?php echo base_url().'asset/mahasiswa/bootstrap/js/bootstrap.min.js'?>" type="text/javascript"></script>
@@ -162,6 +201,6 @@
         <script src="<?php echo base_url().'asset/mahasiswa/scripts/flot/jquery.flot.resize.js'?>" type="text/javascript"></script>
         <script src="<?php echo base_url().'asset/mahasiswa/scripts/datatables/jquery.dataTables.js'?>" type="text/javascript"></script>
         <script src="<?php echo base_url().'asset/mahasiswa/scripts/common.js'?>" type="text/javascript"></script>
-    
+      
     </body>
 </html>
