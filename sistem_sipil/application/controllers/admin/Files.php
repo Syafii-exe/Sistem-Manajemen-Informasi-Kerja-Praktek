@@ -19,95 +19,48 @@ class Files extends CI_Controller{
 		$this->load->view('admin/v_files',$x);
 	}
 
-	function download(){
+	function download1(){
 		$id=$this->uri->segment(4);
 		$get_db=$this->m_files->get_file_byid($id);
 		$q=$get_db->row_array();
-		$file=$q['file_data'];
-		$path='./assets/files/'.$file;
+		$file1=$q['Transkip1'];
+		$path='./asset/file/daftar/'.$file1;
 		$data =  file_get_contents($path);
-		$name = $file;
+		$name = $file1;
 
 		force_download($name, $data); 
 		redirect('admin/files');
 	}
 	
-	function simpan_file(){
-				$config['upload_path'] = './assets/files/'; //path folder
-	            $config['allowed_types'] = 'pdf|doc|docx|ppt|pptx|zip'; //type yang dapat diakses bisa anda sesuaikan
-	            $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
+	function download2(){
+		$id=$this->uri->segment(4);
+		$get_db=$this->m_files->get_file_byid($id);
+		$q=$get_db->row_array();
+		$file2=$q['Transkip2'];
+		$path='./asset/file/daftar/'.$file2;
+		$data =  file_get_contents($path);
+		$name = $file2;
 
-	            $this->upload->initialize($config);
-	            if(!empty($_FILES['filefoto']['name']))
-	            {
-	                if ($this->upload->do_upload('filefoto'))
-	                {
-	                        $gbr = $this->upload->data();
-	                        $file=$gbr['file_name'];
-							$judul=strip_tags($this->input->post('xjudul'));
-							$deskripsi=$this->input->post('xdeskripsi');
-							$oleh=strip_tags($this->input->post('xoleh'));
-	
-							$this->m_files->simpan_file($judul,$deskripsi,$oleh,$file);
-							echo $this->session->set_flashdata('msg','success');
-							redirect('admin/files');
-					}else{
-	                    echo $this->session->set_flashdata('msg','warning');
-	                    redirect('admin/files');
-	                }
-	                 
-	            }else{
-					redirect('admin/files');
-				}
-				
+		force_download($name, $data); 
+		redirect('admin/files');
 	}
-	
 	function update_file(){
-				
-	            $config['upload_path'] = './assets/files/'; //path folder
-	            $config['allowed_types'] = 'pdf|doc|docx|ppt|pptx|zip'; //type yang dapat diakses bisa anda sesuaikan
-	            $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 
-	            $this->upload->initialize($config);
-	            if(!empty($_FILES['filefoto']['name']))
-	            {
-	                if ($this->upload->do_upload('filefoto'))
-	                {
-	                        $gbr = $this->upload->data();
-	                        $file=$gbr['file_name'];
-	                        $kode=$this->input->post('kode');
-	                        $judul=strip_tags($this->input->post('xjudul'));
-							$deskripsi=$this->input->post('xdeskripsi');
-							$oleh=strip_tags($this->input->post('xoleh'));
-							$data=$this->input->post('file');
-							$path='./assets/files/'.$data;
-							unlink($path);
-							$this->m_files->update_file($kode,$judul,$deskripsi,$oleh,$file);
-							echo $this->session->set_flashdata('msg','info');
-							redirect('admin/files');
-	                    
-	                }else{
-	                    echo $this->session->set_flashdata('msg','warning');
-	                    redirect('admin/files');
-	                }
-	                
-	            }else{
 						$kode=$this->input->post('kode');
-	                    $judul=strip_tags($this->input->post('xjudul'));
-						$deskripsi=$this->input->post('xdeskripsi');
-						$oleh=strip_tags($this->input->post('xoleh'));
-						$this->m_files->update_file_tanpa_file($kode,$judul,$deskripsi,$oleh);
+	                    $level=$this->input->post('xlevel');
+						$this->m_files->update_file($kode,$level);
 						echo $this->session->set_flashdata('msg','info');
 						redirect('admin/files');
 	            } 
 
-	}
-
 	function hapus_file(){
 		$kode=$this->input->post('kode');
-		$data=$this->input->post('file');
-		$path='./assets/files/'.$data;
-		unlink($path);
+		$data1=$this->input->post('file1');
+		$data2=$this->input->post('file2');
+		$path1='./assets/files/daftar/'.$data1;
+		unlink($path1);
+		$path2='./assets/files/daftar/'.$data2;
+		unlink($path2);
 		$this->m_files->hapus_file($kode);
 		echo $this->session->set_flashdata('msg','success-hapus');
 		redirect('admin/files');

@@ -1,109 +1,269 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
 
-    <head>
-        <div>
-            <p><?php echo $this->session->flashdata('msg');?></p>
-         </div>
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Login</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Masuk</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="<?php base_url() ?>assets/loginstyle.css">
+    <link rel="stylesheet" href="<?php base_url() ?>assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php base_url() ?>assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php base_url() ?>assets/font-awesome/sanspro.css">
+    <link rel="icon" type="image/png" href="<?php base_url() ?>assets/background/itera.png">
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="<?php echo base_url().'http://fonts.googleapis.com/css?family=Roboto:400,100,300,500'?>">
-        <link rel="stylesheet" href="<?php echo base_url().'asset/bootstrap/css/bootstrap.min.css'?>">
-        <link rel="stylesheet" href="<?php echo base_url().'asset/font-awesome/css/font-awesome.min.css'?>">
-		<link rel="stylesheet" href="<?php echo base_url().'asset/css/form-elements.css'?>">
-        <link rel="stylesheet" href="<?php echo base_url().'asset/css/style.css'?>">
+    <style type="text/css">
+      #latarbelakang {
+          background-color: rgba(0, 0, 0, 0.57);
+          padding: 20px;
+      }
+      body{
+        background-blend-mode: darken;
+        transition: 3s;
+    }
+    blockquote {
+     background-color: rgba(0, 0, 0, 0.57);
+ }
+ html {
+    position: relative;
+    min-height: 100%;
+}
+.carousel-fade .carousel-inner .item {
+    opacity: 0;
+    transition-property: opacity;
+}
+.carousel-fade .carousel-inner .active {
+    opacity: 1;
+}
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+}
+.carousel-fade .carousel-control {
+    z-index: 2;
+}
+@media all and (transform-3d),
+(-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+.item:nth-child(1) {
+    background: url(<?php base_url() ?>assets/background/a.JPG) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: coverd
+    -o-background-size: cover;
+    background-size: cover;
+}
+.item:nth-child(2) {
+    background: url(<?php base_url() ?>assets/background/b.JPG) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.item:nth-child(3) {
+    background: url(<?php base_url() ?>assets/background/e.JPEG) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.item:nth-child(4) {
+    background: url(<?php base_url() ?>assets/background/d.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.item:nth-child(5) {
+    background: url(<?php base_url() ?>assets/background/e.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.item:nth-child(6) {
+    background: url(<?php base_url() ?>assets/background/d.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.carouselnew {
+    z-index: -99;
+}
+.carouselnew .item {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+.title {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  text-shadow: 2px 2px #000;
+  color: #FFF;
+}
+</style>
+<script type="text/javascript">
+    $('#mybgcarousel').carousel({interval: 2000});
+    $('#myCarousel').carousel({interval: 500});
+</script>
+</head>
+<body>
+    <div class="carousel carouselnew slide carousel-fade" id="mybgcarousel" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+            </div>
+            <div class="item">
+            </div>
+            <div class="item">
+            </div>
+            <div class="item">
+            </div>
+            <div class="item">
+            </div>
+            <div class="item">
+            </div>
+        </div>
+        <!-- Left and right controls -->
+    </div>
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+    <div class="login-page">
+        <div class="login-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-sm-7" style="color: #fff;">
 
-        <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="<?php echo base_url().'asset/ico/favicon.png'?>">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo base_url().'asset/ico/apple-touch-icon-144-precomposed.png'?>">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo base_url().'asset/ico/apple-touch-icon-114-precomposed.png' ?>">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url().'asset/ico/apple-touch-icon-72-precomposed.png' ?>">
-        <link rel="apple-touch-icon-precomposed" href="<?php echo base_url().'asset/ico/apple-touch-icon-57-precomposed.png' ?>">
-
-    </head>
-
-    <body>
-
-		<!-- Top menu -->
-
-				<!-- Collect the nav links, forms, and other content for toggling -->
-
-			</div>
-		</nav>
-
-        <!-- Top content -->
-        <div class="top-content">
-        	
-            <div class="inner-bg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>Teknik Sipil</strong> </h1>
-                            <div class="description">
-                            	<p>
-
-                            	</p>
-                            </div>
-                        </div>
                     </div>
-                    <div class="row">
-                    	<div class="col-sm-6 book">
-                    	<!-- 	<img src="#" alt="">-->
-                    	</div>
-                        <div class="col-sm-5 form-box">
-                        	<div class="form-top">
-                        		<div class="form-top-left">
-                        			<h3>Login</h3>
-                        		</div>
-                        		<div class="form-top-right">
-                        			<i class="fa fa-pencil"></i>
-                        		</div>
+                    <div class="col-lg-4 col-md-4 col-md-offset-1 col-sm-5">
+
+                        <div class="login-box">
+                            <div class="form-title" id="latarbelakang">
+                                <a href="<?php base_url() ?>login">
+                                    <font color="white">
+                                        <h1><i class="glyphicon glyphicon-lock"></i>&nbsp;  Teknik Sipil</h1></a>
+                                    </font>
+                                </div>
+                                <!-- /.login-logo -->
+                                <div class="form-body">
+                                    <?php
+                                    $msg = $this->session->flashdata('msg');
+                                    if(!empty($msg))
+                                    {
+                                        echo $msg;
+                                    }
+                                    ?>
+                                    <form action="<?php echo site_url().'login/auth'?>" method="post">
+                                        <div class="form-group has-feedback">
+                                            <input type="text" name="username" id="form-first-name" class="form-first-name form-control" placeholder="Username" required>
+                                            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                                        </div>
+
+                                        <div class="form-group has-feedback">
+                                            <input type="password" name="password" id="form-last-name" class="form-control" placeholder="Password" required>
+                                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                        </div>
+
+
+
+                                        <div class="row">
+                                            <div class="col-xs-8">
+                                                <div class="checkbox icheck">
+                                                    <label>
+                                                        <input type="checkbox">&nbsp&nbspIngat Saya
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <!-- /.col -->
+                                            <div class="col-xs-4">
+                                                <div class="text-right">
+                                                    <button type="submit" class="btn btn-primary">
+                                                        <i class="fa fa-sign-in"></i>
+                                                        Masuk
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <!-- /.col -->
+                                        </div>
+                                    </form>
+
+                                    <div class="text-center">
+                                        <p><font color="#1a1816"></font></p>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-8">
+                                            <div class="text-left">
+
+                                            </div>
+                                            <!-- /.col -->
+                                            <div class="col-xs-4">
+                                                <div class="text-right">
+
+                                                </div>
+                                            </div>
+                                            <!-- /.col -->
+                                        </div>
+                                    </div>
+                                    <!-- /.login-box-body -->
+                                </div>
                             </div>
-                                <form action="<?php echo site_url().'admin/login/auth'?>" method="post">
-                            <div class="form-bottom">
-			                    <form role="form" action="" method="post" class="registration-form">
-			                    	<div class="form-group">
-			                    		<label class="sr-only" for="form-first-name">Usernama</label>
-			                        	<input type="text" name="username" placeholder="Username" class="form-first-name form-control" id="form-first-name">
-			                        </div>
-			                        <div class="form-group">
-			                        	<label class="sr-only" for="form-last-name">Password</label>
-			                        	<input type="text" name="password" placeholder="Password" class="form-last-name form-control" id="form-last-name">
-			                        </div>
-			                        <button type="submit" class="btn">Login</button>
-			                    </form>
-		                    </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-        </div>
+            <!-- /.login-box -->
+            <!-- jQuery 3 -->
+            <script src="<?php base_url() ?>assets/jquery/dist/jquery.min.js"></script>
+            <!-- Bootstrap 3.3.7 -->
+            <script src="<?php base_url() ?>assets/bootstrap/js/bootstrap.min.js"></script>
+            <!-- iCheck -->
 
+            <script>
 
-        <!-- Javascript -->
-        <script src="<?php echo base_url().'asset/js/jquery-1.11.1.min.js'?>"></script>
-        <script src="<?php echo base_url().'asset/bootstrap/js/bootstrap.min.js'?>"></script>
-        <script src="<?php echo base_url().'asset/js/jquery.backstretch.min.js'?>"></script>
-        <script src="<?php echo base_url().'asset/js/retina-1.1.0.min.js'?>"></script>
-        <script src="<?php echo base_url().'asset/js/scripts.js'?>"></script>
-        
-        <!--[if lt IE 10]>
-            <script src="asset/js/placeholder.js"></script>
-        <![endif]-->
+            </script>
+            <script type="text/javascript">
+                function cekform()
+                {
+                    if (!$("#username").val())
+                    {
+                        alert('Maaf username tidak boleh kosong');
+                        $("#username").focus();
+                        return false;
+                    }
 
-    </body>
-
-</html>
+                    if (!$("#password").val())
+                    {
+                        alert('Maaf password tidak boleh kosong');
+                        $("#password").focus();
+                        return false;
+                    }
+                }
+            </script>
+        </body>
+        </html>

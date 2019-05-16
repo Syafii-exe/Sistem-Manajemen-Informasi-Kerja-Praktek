@@ -10,12 +10,10 @@ class Pengguna extends CI_Controller{
 		$this->load->library('upload');
 	}
 
-
 	function index(){
 		$kode=$this->session->userdata('idadmin');
-		$x['user']=$this->m_pengguna->get_pengguna_login($kode);
 		$x['data']=$this->m_pengguna->get_all_pengguna();
-		$this->load->view('admin/v_verif',$x);
+		$this->load->view('admin/v_pengguna',$x);
 	}
 
 	function simpan_pengguna(){
@@ -43,7 +41,6 @@ class Pengguna extends CI_Controller{
 
 	                        $gambar=$gbr['file_name'];
 	                        $nama=$this->input->post('xnama');
-	                        $jenkel=$this->input->post('xjenkel');
 	                        $username=$this->input->post('xusername');
 	                        $password=$this->input->post('xpassword');
                             $konfirm_password=$this->input->post('xpassword2');
@@ -54,7 +51,7 @@ class Pengguna extends CI_Controller{
      							echo $this->session->set_flashdata('msg','error');
 	               				redirect('admin/pengguna');
      						}else{
-	               				$this->m_pengguna->simpan_pengguna($nama,$jenkel,$username,$password,$email,$nohp,$level,$gambar);
+	               				$this->m_pengguna->simpan_pengguna($nama,$username,$password,$email,$level,$gambar);
 	                    		echo $this->session->set_flashdata('msg','success');
 	               				redirect('admin/pengguna');
 	               				
@@ -67,7 +64,6 @@ class Pengguna extends CI_Controller{
 	                 
 	            }else{
 	            	$nama=$this->input->post('xnama');
-	                $jenkel=$this->input->post('xjenkel');
 	                $username=$this->input->post('xusername');
 	                $password=$this->input->post('xpassword');
                     $konfirm_password=$this->input->post('xpassword2');
@@ -78,7 +74,7 @@ class Pengguna extends CI_Controller{
      					echo $this->session->set_flashdata('msg','error');
 	               		redirect('admin/pengguna');
      				}else{
-	               		$this->m_pengguna->simpan_pengguna_tanpa_gambar($nama,$jenkel,$username,$password,$email,$nohp,$level);
+	               		$this->m_pengguna->simpan_pengguna_tanpa_gambar($nama,$username,$password,$email,$level);
 	                    echo $this->session->set_flashdata('msg','success');
 	               		redirect('admin/pengguna');
 	               	}
@@ -121,14 +117,14 @@ class Pengguna extends CI_Controller{
                     		$nohp=$this->input->post('xkontak');
 							$level=$this->input->post('xlevel');
                             if (empty($password) && empty($konfirm_password)) {
-                            	$this->m_pengguna->update_pengguna_tanpa_pass($kode,$nama,$jenkel,$username,$password,$email,$nohp,$level,$gambar);
+                            	$this->m_pengguna->update_pengguna_tanpa_pass($kode,$nama,$username,$password,$email,$level,$gambar);
 	                    		echo $this->session->set_flashdata('msg','info');
 	               				redirect('admin/pengguna');
      						}elseif ($password <> $konfirm_password) {
      							echo $this->session->set_flashdata('msg','error');
 	               				redirect('admin/pengguna');
      						}else{
-	               				$this->m_pengguna->update_pengguna($kode,$nama,$jenkel,$username,$password,$email,$nohp,$level,$gambar);
+	               				$this->m_pengguna->update_pengguna($kode,$nama,$username,$password,$email,$level,$gambar);
 	                    		echo $this->session->set_flashdata('msg','info');
 	               				redirect('admin/pengguna');
 	               			}
@@ -149,14 +145,14 @@ class Pengguna extends CI_Controller{
                     $nohp=$this->input->post('xkontak');
 					$level=$this->input->post('xlevel');
 	            	if (empty($password) && empty($konfirm_password)) {
-                       	$this->m_pengguna->update_pengguna_tanpa_pass_dan_gambar($kode,$nama,$jenkel,$username,$password,$email,$nohp,$level);
+                       	$this->m_pengguna->update_pengguna_tanpa_pass_dan_gambar($kode,$nama,$username,$password,$email,$level);
 	                    echo $this->session->set_flashdata('msg','info');
 	               		redirect('admin/pengguna');
      				}elseif ($password <> $konfirm_password) {
      					echo $this->session->set_flashdata('msg','error');
 	               		redirect('admin/pengguna');
      				}else{
-	               		$this->m_pengguna->update_pengguna_tanpa_gambar($kode,$nama,$jenkel,$username,$password,$email,$nohp,$level);
+	               		$this->m_pengguna->update_pengguna_tanpa_gambar($kode,$nama,$username,$password,$email,$level);
 	                    echo $this->session->set_flashdata('msg','warning');
 	               		redirect('admin/pengguna');
 	               	}
